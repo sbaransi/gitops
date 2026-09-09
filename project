@@ -3,12 +3,16 @@ kind: AppProject
 metadata:
   name: my-project
   namespace: argocd
+
 spec:
-  description: Lab Project
+  description: Allow access to my GitOps repository
+
   sourceRepos:
-    - '*'
+    - https://github.com/sbaransi/gitops.git
+
   destinations:
     - namespace: '*'
       server: https://kubernetes.default.svc
+
   sourceNamespaces:
     - '*'
